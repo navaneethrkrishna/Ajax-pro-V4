@@ -171,55 +171,6 @@ async def help(client, message):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "eth":
-        buttons = [[ 
-            InlineKeyboardButton('𝙶-𝚃𝚁𝙰𝙽𝚂', callback_data='gtrans'),
-            InlineKeyboardButton('𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃', callback_data='urlshort'),
-            InlineKeyboardButton('𝙴𝚇𝚃𝚁𝙰', callback_data='extra')
-            ],[
-            InlineKeyboardButton('𝚂𝙾𝙽𝙶', callback_data='songs'),
-            InlineKeyboardButton('𝚃𝚃𝚂', callback_data='ttss'),
-            InlineKeyboardButton("𝚅𝙸𝙳𝙴𝙾", callback_data='video')            
-            ],[
-            InlineKeyboardButton("𝙸𝙼𝙰𝙶𝙴", callback_data='image'),
-            InlineKeyboardButton('𝙿𝚄𝚁𝙶𝙴', callback_data='purges'),
-            InlineKeyboardButton('𝚆𝙷𝙾𝙸𝚂', callback_data='whois')           
-            ],[
-            InlineKeyboardButton('‹‹ 𝙱𝙰𝙲𝙺', callback_data='help'),
-            InlineKeyboardButton('𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='statsx'),
-            InlineKeyboardButton('𝙽𝙴𝚇𝚃 ››', callback_data='prop')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)       
-        await query.message.edit_text(                     
-            text=script.HELP_TXT.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )  
-    elif query.data == "prop":
-        buttons = [[ 
-            InlineKeyboardButton('𝙹𝚂𝙾𝙽𝙴', callback_data='son'),
-            InlineKeyboardButton('𝙿𝙰𝚂𝚃𝙴', callback_data='pastes'),
-            InlineKeyboardButton('𝙲𝙾𝚅𝙸𝙳', callback_data='corona')
-            ],[
-            InlineKeyboardButton('𝙺𝙸𝙲𝙺', callback_data='zombies'),
-            InlineKeyboardButton('𝙿𝙸𝙽𝙶', callback_data='pings'),
-            InlineKeyboardButton('𝙼𝚄𝚃𝙴', callback_data='restric')            
-            ],[
-            InlineKeyboardButton('𝙵𝚄𝙽', callback_data='fun'), 
-            InlineKeyboardButton('𝙳𝙴𝙿𝙻𝙾𝚈', callback_data='deploy'),
-            InlineKeyboardButton('𝙿𝙸𝙽', callback_data='pin')           
-            ],[
-            InlineKeyboardButton('‹‹ 𝙱𝙰𝙲𝙺', callback_data='eth'),
-            InlineKeyboardButton('𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='statsy'),
-            InlineKeyboardButton('𝙷𝙾𝙼𝙴', callback_data='start')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)       
-        await query.message.edit_text(                     
-            text=script.HELP_TXT.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-
 
 @Client.on_message(filters.command(["imdb", 'search']))
 async def imdb_search(client, message):
