@@ -165,9 +165,10 @@ async def help(client, message):
             InlineKeyboardButton('𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats'),
             InlineKeyboardButton('𝙽𝙴𝚇𝚃 ››', callback_data='eth')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)       
-        await query.message.edit_text(                     
-            text=script.HELP_TXT.format(query.from_user.mention),
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=script.HELP_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
