@@ -816,10 +816,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "eth":
-        buttons = [[          
-            InlineKeyboardButton('‹‹ 𝙱𝙰𝙲𝙺', callback_data='start'),
+        buttons = [[ 
+            InlineKeyboardButton('𝙶-𝚃𝚁𝙰𝙽𝚂', callback_data='gtrans'),
+            InlineKeyboardButton('𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃', callback_data='urlshort'),
+            InlineKeyboardButton('𝙴𝚇𝚃𝚁𝙰', callback_data='extra')
+            ],[
+            InlineKeyboardButton('𝚂𝙾𝙽𝙶', callback_data='songs'),
+            InlineKeyboardButton('𝚃𝚃𝚂', callback_data='ttss'),
+            InlineKeyboardButton("𝚅𝙸𝙳𝙴𝙾", callback_data='video')            
+            ],[
+            InlineKeyboardButton("𝙸𝙼𝙰𝙶𝙴", callback_data='image'),
+            InlineKeyboardButton('𝙿𝚄𝚁𝙶𝙴', callback_data='purges'),
+            InlineKeyboardButton('𝚆𝙷𝙾𝙸𝚂', callback_data='whois')           
+            ],[
+            InlineKeyboardButton('‹‹ 𝙱𝙰𝙲𝙺', callback_data='help'),
             InlineKeyboardButton('𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats'),
-            InlineKeyboardButton('𝙽𝙴𝚇𝚃 ››', callback_data='eth')
+            InlineKeyboardButton('𝙽𝙴𝚇𝚃 ››', callback_data='prop')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
         await query.message.edit_text(                     
@@ -827,6 +839,30 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )  
+    elif query.data == "prop":
+        buttons = [[ 
+            InlineKeyboardButton('𝙶-𝚃𝚁𝙰𝙽𝚂', callback_data='gtrans'),
+            InlineKeyboardButton('𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃', callback_data='urlshort'),
+            InlineKeyboardButton('𝙴𝚇𝚃𝚁𝙰', callback_data='extra')
+            ],[
+            InlineKeyboardButton('𝚂𝙾𝙽𝙶', callback_data='songs'),
+            InlineKeyboardButton('𝚃𝚃𝚂', callback_data='ttss'),
+            InlineKeyboardButton("𝚅𝙸𝙳𝙴𝙾", callback_data='video')            
+            ],[
+            InlineKeyboardButton("𝙸𝙼𝙰𝙶𝙴", callback_data='image'),
+            InlineKeyboardButton('𝙿𝚄𝚁𝙶𝙴', callback_data='purges'),
+            InlineKeyboardButton('𝚆𝙷𝙾𝙸𝚂', callback_data='whois')           
+            ],[
+            InlineKeyboardButton('‹‹ 𝙱𝙰𝙲𝙺', callback_data='help'),
+            InlineKeyboardButton('𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats'),
+            InlineKeyboardButton('𝙽𝙴𝚇𝚃 ››', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)       
+        await query.message.edit_text(                     
+            text=script.HELP_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
     elif query.data == "about":
         buttons= [[
             InlineKeyboardButton('♥️ 𝙳𝙴𝙿𝙻𝙾𝚈 𝚃𝚄𝚃𝙾𝚁𝙸𝙰𝙻 ♥️', url='https://youtu.be/kB9TkCs8cX0')
